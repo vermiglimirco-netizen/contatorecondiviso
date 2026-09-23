@@ -3,17 +3,14 @@ package it.mirco.thread;
 public class Main {
     public static void main(String[] args) 
     {
-        Contatore contatoreCondiviso = new Contatore(10);
+        Contatore contatoreCondiviso = new Contatore();
 
-        // Crea le due istanze di Lavoratore (Runnable)
-        Lavoratore lavoratore1 = new Lavoratore(contatoreCondiviso, "Thread-1");
+        Lavoratore lavoratore1 = new Lavoratore(contatoreCondiviso,"Thread-1");
         Lavoratore lavoratore2 = new Lavoratore(contatoreCondiviso, "Thread-2");
 
-        // Crea e avvia i thread
         Thread t1 = new Thread(lavoratore1);
         Thread t2 = new Thread(lavoratore2);
 
-        System.out.println("Avvio dei thread...");
         t1.start();
         t2.start();
 
