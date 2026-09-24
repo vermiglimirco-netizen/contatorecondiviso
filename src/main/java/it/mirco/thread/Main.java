@@ -14,7 +14,6 @@ public class Main {
         t1.start();
         t2.start();
 
-        // Attesa del completamento dei thread tramite join()
         try {
             t1.join();
             t2.join();
@@ -22,7 +21,6 @@ public class Main {
             System.out.println("Il thread principale è stato interrotto.");
         }
 
-        // Messaggio finale dopo la fine di entrambi i thread
         System.out.println("Raggiunto il valore massimo del contatore!");
     }
 }

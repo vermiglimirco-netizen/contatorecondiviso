@@ -2,10 +2,10 @@ package it.mirco.thread;
 
 import java.util.Random;
 
-public class Lavoratore implements Readable
+public class Lavoratore implements Runnable
 {
-    private Contatore contatore;
-    private String nome;
+    private Contatore c;
+    private String n;
     
 
     public Lavoratore(Contatore c, String n) {
@@ -26,7 +26,7 @@ public class Lavoratore implements Readable
                     Thread.sleep(pausa);
                 } catch (InterruptedException e) {
                     System.out.println(nome + " è stato interrotto.");
-                    Thread.currentThread().interrupt(); // Ripristina lo stato di interruzione
+                    Thread.currentThread().interrupt();
                 }              
             }
         }
